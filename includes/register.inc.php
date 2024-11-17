@@ -1,4 +1,7 @@
 <?php
+require_once "./dbh.inc.php";
+require_once "./validation.inc.php";
+
 
 if(isset($_POST["register"])){
     $name= $_POST["name"];
@@ -23,7 +26,7 @@ if(isset($_POST["register"])){
     else if(matchpassword($password, $cpassword)){
        header("location: ../register.php?err=donotmatchpass");
     }
-    else if(availblenameEmail($name,$email)){
+    else if(availblEmail($email)){
        header("location: ../register.php?err=availbleNameOrEmail");
     }
     else{
