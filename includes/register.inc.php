@@ -30,9 +30,27 @@ if(isset($_POST["register"])){
        header("location: ../register.php?err=availbleNameOrEmail");
     }
     else{
-        echo "success";
+       userRegister($name,$email,$password,$cpassword,$image);
     }
+}else{
+   header("location: ../register.php");
 }
 
+
+function userRegister($name,$email,$password,$cpassword,$image){
+
+   $hashpassword = pashword_hash($password, PASSWORD_DEFAULT);
+
+   $sql = "INSERT INTO users (name,email,password,image) values(?,?,?,?);";
+
+   $stmt = mysqli_stmt_init($conn);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      header("location: ../register.php?err=failedstmt");
+   }
+   
+
+
+}
 
 ?>
