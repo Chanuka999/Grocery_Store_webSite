@@ -14,7 +14,7 @@
 
 
     <section class="form-container">
-      <form action="" method="POST" enctype="multipart/form-data">
+      <form action="./includes/register.inc.php" method="POST" enctype="multipart/form-data">
         <h1>Register</h1>
          <input type="text" name="name" class="box" placeholder="enter your name" required> 
          <br><br>
