@@ -10,6 +10,16 @@ function imptySet($name,$email,$password,$cpassword/*,$image*/){
     }
 }
 
+function emptyValid($email,$password){
+    $value;
+    if(empty($email) || empty($password)){
+           $value=true;
+    }else{
+        $value=false;
+    }
+    return $value;
+}
+
 function invalidname($name){
     $value;
     if(!preg_match("/^[a-zA-Z]+$/", $name)){
