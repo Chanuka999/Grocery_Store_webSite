@@ -1,9 +1,9 @@
 <?php
 require_once "./dbh.inc.php";
 
-function imptySet($name,$email,$password,$cpassword,$image){
+function imptySet($name,$email,$password,$cpassword/*,$image*/){
     $value;
-    if(empty($name) || empty($email) || empty($password) || empty($cpassword) || empty($image)){
+    if(empty($name) || empty($email) || empty($password) || empty($cpassword) /*|| empty($image)*/){
       $value=true;
     }else{
         $value=false;
