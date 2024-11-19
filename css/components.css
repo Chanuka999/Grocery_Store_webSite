@@ -45,7 +45,7 @@ button{
     padding: 10px 30px;
     cursor: pointer;
     border: none;
-    background-color: #000;
+    background-color: #4ee022;
     color: white;
     transition: all 0.3s ease-in;
 }
@@ -103,9 +103,15 @@ html{
     align-items: flex-start;
    
 }
+.forms{
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5%;
+}
 .form-container form{
     text-align: center;
-    border:1px solid black;
+    border:1px solid rgb(31, 179, 11);
     padding: 5px;
     
     background-color: rgb(224, 198, 198);
@@ -125,7 +131,7 @@ html{
     
      font-size: 20px;
     background-color: antiquewhite;
-    color: black;
+    color: rgb(22, 202, 22);
 }
 
 .form-container form p{
