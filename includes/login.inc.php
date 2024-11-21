@@ -37,7 +37,7 @@ function userLogin($conn,$email,$password,/*$remember*/){
         mysqli_stmt_execute($stmt);
 
          echo "login successfull";
-        //  header("location: ../profile.php?login=successfull");
+         header("location: ../profile.php?login=successfull");
 
 
     }
