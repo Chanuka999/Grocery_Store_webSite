@@ -19,7 +19,7 @@
           <label for="re-check">Remember Me</label>
           </div>
           <button type="submit" name="login-btn">Login</button>
-
+          <p>Do not you have account?<a href="register.php">register</a></p>
         </form>
     </div>
 </body>
