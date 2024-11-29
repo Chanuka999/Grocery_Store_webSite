@@ -12,7 +12,7 @@
 <body>
 <?php
 if(isset($message)){
-  foreach ($(message) as $message) {
+  foreach (($message) as $message) {
     echo '
     <div class="message">
     <span>'.$message.'</div>
@@ -38,7 +38,7 @@ if(isset($message)){
          <br><br>
          <input type="password" name="cpassword"  class="box" placeholder="enter your confirm password" required> 
          <br><br>
-         <input type="file" name="image" class="box" required accept="image/jpg,image/jpeg,image/png">
+         <input type="file" name="image" class="box">
          <br><br>
          <input type="submit" name="register" value="register now" class="btn" required>
          <p>All ready you have account?<a href="login.php">Login</a></p>
