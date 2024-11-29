@@ -12,7 +12,7 @@
 <body>
 <?php
 if(isset($message)){
-  foreach (($message) as $message) {
+  foreach ($message as $message) {
     echo '
     <div class="message">
     <span>'.$message.'</div>
