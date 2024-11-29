@@ -148,8 +148,38 @@ html{
 .form-container form p a:hover{
    text-decoration: underline;
 }
+.header{
+    background-color: white;
+    position: sticky;
+    top:0;
+    left:0;
+    right: 0;
+    z-index: 1000;
+    box-shadow:none;
+}
 
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: black;
+}
+.header .flex .logo span{
+    color: greenyellow;
+}
 
+.header .flex .navbar a{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color:black;
+}
 
 
 @media (max-width:991px){
