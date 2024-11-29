@@ -1,9 +1,9 @@
 <?php
 require_once "./dbh.inc.php";
 
-function imptySet($name,$email,$password,$cpassword/*,$image*/){
+function imptySet($name,$email,$password,$cpassword,$image){
     $value;
-    if(empty($name) || empty($email) || empty($password) || empty($cpassword) /*|| empty($image)*/){
+    if(empty($name) || empty($email) || empty($password) || empty($cpassword) || empty($image)){
       $value=true;
     }else{
         $value=false;
@@ -84,5 +84,32 @@ function availblEmail($email){
 
     return $value;
 
+}
+
+function invalidImage($imageName,$imageTmpName,$imageSize,$imageError,$imageType){
+    $value;
+    $fileExt = explode('.',$imageName);
+
+    $fileActualExt = strtolower($fileExt['1']);
+
+    $allowed = array('jpg','jpeg','png');
+
+    if(in_array($fileActualExt,$allowed)){
+        if($imageError === 0 ){
+            if($imageSize<1000000){
+                 $fileDest = '../uploads/'.$imageName;
+
+                 move_uploaded_file($imageTmpName,$fileDest);
+                 $value=false;
+            }else{
+               $value=true;
+            }
+        }else{
+            $value=true;
+        }
+    }else{
+      $value=true;
+    }
+    return $value;
 }
 ?>
