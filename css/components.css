@@ -181,12 +181,59 @@ html{
     color:black;
 }
 
+.header .flex .navbar a:hover{
+   text-decoration: underline;
+   color: green;
+}
+
+.header .flex .icons > *{
+    font-size: 1.5rem;
+    color:black;
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+
+.header .flex .icons > *:hover{
+    color:green; 
+}
+
+#munu-btn{
+    display: none;
+}
 
 @media (max-width:991px){
 
     html{
         font-size: 55%;
     }
+}
+
+@media (max-width:768px){
+   #menu-btn{
+    display: inline-block;
+   /*transition: 0.2s linear;*/
+   }
+
+   .header .flex .navbar{
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background-color: white;
+    position: absolute;
+    top:99%;
+    left: 0;
+    right: 0;
+     transition: 0.2s linear;
+     clip-path: polygon(0 0,100% 0,100% 0, 0 0);
+   }
+
+   .header .flex .navbar .active{
+    clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
+   }
+
+   .header .flex .navbar a{
+    display: block;
+    margin: 2rem;
+   }
 }
 
 @media (max-width:450px){
