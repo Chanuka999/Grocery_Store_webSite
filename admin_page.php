@@ -1,3 +1,16 @@
+<?php
+
+include "includes/dbh.inc.php";
+
+session_start();
+
+$id = $_SESSION['id'];
+
+if(!isset($id)){
+    header('location:profile.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
