@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include 'dbh.inc.php';
 include 'validation.inc.php';
 
@@ -35,10 +37,16 @@ function userLogin($conn,$email,$password,/*$remember*/){
         mysqli_stmt_bind_param($stmt, "ss", $email, $password);
 
         mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-         echo "login successfull";
-         header("location: ../profile.php?login=successfull");
-
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['id'] = $row['id']; // Set the user ID in the session
+            header('location:admin_page.php');
+        } else {
+            echo "Invalid username or password";
+        }
+        
 
     }
 }
