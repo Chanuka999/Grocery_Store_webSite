@@ -1,4 +1,5 @@
 <?php
+include "includes/dbh.inc.php";
 if(isset($message)){
   foreach ($message as $message) {
     echo '
@@ -38,8 +39,44 @@ if(isset($message)){
            
             <div class="profile">
                 <?php
+               $sql = "SELECT * FROM users WHERE id= ?;";
 
+               $stmt = mysqli_stmt_init($conn);
+               
+               $res = mysqli_stmt_prepare($stmt,$sql);
+
+               if(!$res){
+                echo "stmt failed";
+               }else{
+                 mysqli_stmt_bind_param($stmt, 'i',$id);
+                
+                  mysqli_stmt_execute($stmt);
+
+                  $res = mysqli_stmt_get_result($stmt);
+
+                  $row = mysqli_num_rows($res);
+                 
+                  if($row>0){
+                    if(!empty($row['image'])){
+                        echo ' <img src="uploads/' . htmlspecialchars($row['image']).'" alt="image">';  
+                     
+                    }else{
+                        echo '<img src="uploads/default.jpg" alt="Default User Image">'; 
+                    }
+                    echo '<p>' . htmlspecialchars($row['name']) . '</p>';
+                  }else{
+                    echo '<img src="uploads/default.jpg" alt="Default User Image">'; 
+                  }
+                  mysqli_stmt_close($stmt);
+               }
                 ?>
+              
+               <a href="admin_update_profile.php" class="btn">Update</a>
+               <a href="logout.php" class="delete-btn">logout</a>
+               <div class="flex-btn">
+                 <a href="login.php" class="option-btn">Login</a>
+                 <a href="register.php" class="option-btn">register</a>
+               </div>
             </div>
         </div>
     </header>
