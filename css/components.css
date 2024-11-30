@@ -1,243 +1,164 @@
-*{
-    font-family:sans-serif;
-    box-sizing: border-box;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    outline: none;
-    /* border: none; */
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.header {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.header .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4caf50;
     text-decoration: none;
 }
 
-section{
-   padding: 10%;
-    margin: 0 auto;
-    max-width: 1200px;
-  
+.header .logo span {
+    color: white;
 }
 
- body{
-    background-color: white;
-     /* justify-content: center;
-    align-items: center; 
-    display: flex;*/
-    width: 100%;
-    min-height: 100vh;
-    flex-direction: column;
-    padding: 10px;
-} 
-p,
-input,
-button{
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
     font-size: 1rem;
 }
-input[type="text"],
-input[type="password"]
-{
-    width: 100%;
-    height: 40px;
-    margin: 5px 0;
-    padding: 0 10px;
-    border: none;
+
+.navbar a:hover {
+    color: #4caf50;
 }
-button{
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px 30px;
-    cursor: pointer;
-    border: none;
-    background-color: #4ee022;
+
+/* Icons Styling */
+.icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
     color: white;
-    transition: all 0.3s ease-in;
+    cursor: pointer;
 }
 
-html{
-    font-size: 20px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top:6.5rem;
+.icons .fas {
+    transition: color 0.3s ease;
 }
-.message{
-    position:sticky;
-    top:0;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: aqua;
-    padding: 2rem;
+
+.icons .fas:hover {
+    color: #4caf50;
+}
+
+/* Profile Section */
+.profile {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    z-index: 1;
-}
-.message span{
-    font-size: 2rem;
-    color: black;
-
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.message i{
-    cursor: pointer;
-    color: red;
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4caf50;
 }
 
-.message i:hover{
-    color: black;
-}
-.btn{
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 0.5%;
-    background-color: gray;
-    text-transform: capitalize;
-    cursor: pointer;
-    width: 50%;
-}
-.btn:hover{
-    background-color: rgb(21, 150, 21);
-}
-.form-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-   
-}
-.forms{
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5%;
-}
-.form-container form{
-    text-align: center;
-    border:1px solid rgb(31, 179, 11);
-    padding: 5px;
-    
-    background-color: rgb(224, 198, 198);
+.profile p {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
 }
 
-
-.form-container form h1{
-    margin-bottom: 1rem;
-    color:green;
-    text-align: center;
-}
-
-.form-container form .box{
-    width: 50%;
-    margin: 10px 0;
-    border-radius: 0.5rem;
-    
-     font-size: 20px;
-    background-color: antiquewhite;
-    color: rgb(22, 202, 22);
-}
-
-.form-container form p{
-    margin-top: 2px;
-    margin-bottom: 3px;
-  
-}
-
-.form-container form p a{
-    color: blue;
-   
-}
-
-.form-container form p a:hover{
-   text-decoration: underline;
-}
-.header{
-    background-color: white;
-    position: sticky;
-    top:0;
-    left:0;
-    right: 0;
-    z-index: 1000;
-    box-shadow:none;
-}
-
-.header .flex{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    margin: 0 auto;
-    max-width: 1200px;
-    position: relative;
-}
-.header .flex .logo{
-    font-size: 2.5rem;
-    color: black;
-}
-.header .flex .logo span{
-    color: greenyellow;
-}
-
-.header .flex .navbar a{
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    color:black;
-}
-
-.header .flex .navbar a:hover{
-   text-decoration: underline;
-   color: green;
-}
-
-.header .flex .icons > *{
-    font-size: 1.5rem;
-    color:black;
-    cursor: pointer;
-    margin-left: 1.5rem;
-}
-
-.header .flex .icons > *:hover{
-    color:green; 
-}
-
-#munu-btn{
-    display: none;
-}
-
-@media (max-width:991px){
-
-    html{
-        font-size: 55%;
-    }
-}
-
-@media (max-width:768px){
-   #menu-btn{
+/* Buttons Styling */
+.btn, .option-btn, .delete-btn {
     display: inline-block;
-   /*transition: 0.2s linear;*/
-   }
-
-   .header .flex .navbar{
-    border-top: var(--border);
-    border-bottom: var(--border);
-    background-color: white;
-    position: absolute;
-    top:99%;
-    left: 0;
-    right: 0;
-     transition: 0.2s linear;
-     clip-path: polygon(0 0,100% 0,100% 0, 0 0);
-   }
-
-   .header .flex .navbar .active{
-    clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
-   }
-
-   .header .flex .navbar a{
-    display: block;
-    margin: 2rem;
-   }
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
-@media (max-width:450px){
-    html{
-        font-size: 50%;
-    } 
+.btn {
+    background-color: #4caf50;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.option-btn {
+    background-color: #007bff;
+}
+
+.option-btn:hover {
+    background-color: #0056b3;
+}
+
+.flex-btn {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icons {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-btn {
+        justify-content: center;
+    }
 }
