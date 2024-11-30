@@ -18,6 +18,7 @@ if(isset($message)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <header class="header">
@@ -30,8 +31,16 @@ if(isset($message)){
                 <a href="admin_users.php">users</a>
                 <a href="admin_contacts.php">contacts</a>
             </nav>
-            <div id="menu-btn" class="fas-fa-bars"></div>
-            <div id="user-btn" class="fas-fa-user"></div>
+            <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            </div>
+           
+            <div class="profile">
+                <?php
+
+                ?>
+            </div>
         </div>
     </header>
 </body>
