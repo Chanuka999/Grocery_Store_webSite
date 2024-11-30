@@ -10,8 +10,9 @@
 <body>
    
     <?php
-    include ('admin_header.php');
+    include ('admin_header.php'); ?>
 
-   ?>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
