@@ -42,7 +42,7 @@ function userLogin($conn,$email,$password,/*$remember*/){
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['id'] = $row['id']; // Set the user ID in the session
-            header('location:admin_page.php');
+            header('location:../profile.php');
         } else {
             echo "Invalid username or password";
         }
