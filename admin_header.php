@@ -56,21 +56,21 @@ if(isset($message)){
 
                   $row = mysqli_num_rows($res);
                  
-                  if($row>0){
+                  if($row){
                     if(!empty($row['image'])){
-                        echo ' <img src="uploads/' . htmlspecialchars($row['image']).'" alt="image">';  
+                      echo '<img src="uploads/' . htmlspecialchars($row['image']) . '" alt="User Image">';
                      
                     }else{
                         echo '<img src="uploads/default.jpg" alt="Default User Image">'; 
                     }
-                    echo '<p>' . htmlspecialchars($row['name']) . '</p>';
+                    // echo '<p>' . htmlspecialchars($row['name']) . '</p>'; 
                   }else{
                     echo '<img src="uploads/default.jpg" alt="Default User Image">'; 
                   }
                   mysqli_stmt_close($stmt);
                }
                 ?>
-              
+          
                <a href="admin_update_profile.php" class="btn">Update</a>
                <a href="logout.php" class="delete-btn">logout</a>
                <div class="flex-btn">
